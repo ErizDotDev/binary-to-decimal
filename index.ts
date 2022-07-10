@@ -37,11 +37,11 @@ const convertBinaryToDecimal = (binaryInput: string): number => {
     binaryInput.length >= 5
       ? (binaryInput[binaryInput.length - 5] as unknown as number) * 16
       : 0;
-  const thirtytwos: number =
+  const thirtyTwos: number =
     binaryInput.length >= 6
       ? (binaryInput[binaryInput.length - 6] as unknown as number) * 32
       : 0;
-  const sixtyfours: number =
+  const sixtyFours: number =
     binaryInput.length >= 7
       ? (binaryInput[binaryInput.length - 7] as unknown as number) * 64
       : 0;
@@ -56,8 +56,8 @@ const convertBinaryToDecimal = (binaryInput: string): number => {
     fours +
     eights +
     sixteens +
-    thirtytwos +
-    sixtyfours +
+    thirtyTwos +
+    sixtyFours +
     oneTwentyEights
   );
 };
