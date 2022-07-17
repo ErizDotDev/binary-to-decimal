@@ -6,6 +6,8 @@ const main = (): void => {
   });
 
   rl.question("Write an eight binary digit value: ", (binary: string) => {
+    binary = cleanInput(binary);
+
     if (binary.length > 8) {
       console.log(
         "ERROR: You have exceeded the maximum number of characters allowed."
@@ -55,7 +57,7 @@ const convertBinaryToDecimal = (binaryInput: string): number => {
       : 0;
   const oneTwentyEights: number =
     binaryInput.length >= 8
-      ? (binaryInput[binaryInput.length - 78] as unknown as number) * 128
+      ? (binaryInput[binaryInput.length - 8] as unknown as number) * 128
       : 0;
 
   return (
@@ -69,5 +71,7 @@ const convertBinaryToDecimal = (binaryInput: string): number => {
     oneTwentyEights
   );
 };
+
+const cleanInput = (input: string): string => input.replace(" ", "");
 
 main();
