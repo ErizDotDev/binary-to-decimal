@@ -6,6 +6,14 @@ const main = (): void => {
   });
 
   rl.question("Write an eight binary digit value: ", (binary: string) => {
+    if (binary.length > 8) {
+      console.log(
+        "ERROR: You have exceeded the maximum number of characters allowed."
+      );
+      rl.close();
+      return;
+    }
+
     const decimalResult = convertBinaryToDecimal(binary);
     console.log(`Decimal value = ${decimalResult}!`);
     rl.close();
